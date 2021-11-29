@@ -1,0 +1,13 @@
+#!/bin/sh
+
+alias ls='ls --color'
+alias ll='ls -ahlF'
+
+# verbose
+alias mkdir='mkdir -v'
+alias mv='mv -v'
+alias cp='cp -v'
+alias rm='rm -v'
+alias ln='ln -v'
+
+alias glog="git log --graph --all --pretty=oneline --pretty='%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>'  --abbrev-commit --date=human"
