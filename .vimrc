@@ -71,16 +71,7 @@ Plug 'preservim/nerdtree'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'gabrielelana/vim-markdown'
 Plug 'tomasr/molokai'
-Plug 'ayu-theme/ayu-vim' " or other package manager
-Plug 'rainglow/vim'
 call plug#end()
 " -------------------------------
-"...
-" set termguicolors     " enable true colors support
-" ？let ayucolor="light"  " for light version of theme
-" l？et ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
 
-" colorscheme ayu
-" colorscheme molokai
-
+colorscheme molokai
