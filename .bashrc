@@ -91,6 +91,13 @@ fi
 alias ll='ls -al'
 alias la='ls -A'
 alias l='ls -CF'
+# add -v will stdout result
+alias mkdir='mkdir -v'
+alias mv='mv -v'
+alias cp='cp -v'
+alias rm='rm -v'
+alias ln='ln -v'
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
