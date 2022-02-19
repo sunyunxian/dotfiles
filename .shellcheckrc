@@ -1,0 +1,8 @@
+# Turn on warnings for unquoted variables with safe values
+enable=quote-safe-variables
+
+# Turn on warnings for unassigned uppercase variables
+enable=check-unassigned-uppercase
+
+# Allow \r\n as we're on Windows and git by default forces \r\n
+disable=SC1017
