@@ -128,3 +128,6 @@ export https_proxy="socks5://$host_ip:7890"
 export http_proxy="http://$host_ip:7890"
 export all_proxy="socks5://$host_ip:7890"
 
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
