@@ -5,15 +5,15 @@ lua require('basic')
 " Packer plugins config
 lua require('plugins')
 " shortkey config
-lua require('keybindings')
+" lua require('keybindings')
 " lsp config
-lua require('lsp/setup')
+" lua require('lsp/setup')
 
-set background=dark " background config, or light if you want light mode
+" set background=dark " background config, or light if you want light mode
 
 " config theme
 " colorscheme gruvbox " https://github.com/ellisonleao/gruvbox.nvim
-colorscheme zephyr " https://github.com/glepnir/zephyr-nvim
+" colorscheme zephyr " https://github.com/glepnir/zephyr-nvim
 
 
 " 插件配置
@@ -22,8 +22,8 @@ colorscheme zephyr " https://github.com/glepnir/zephyr-nvim
 " lua require('plugin-config/telescope')
 " lua require('plugin-config/nvim-autopairs')
 " https://github.com/kyazdani42/nvim-tree.lua
-lua require('plugin-config/nvim-tree')
-lua require('plugin-config/bufferline')
+" lua require('plugin-config/nvim-tree')
+" lua require('plugin-config/bufferline')
 " lua require('plugin-config/surround')
 " lua require('plugin-config/comment')
 " lua require('plugin-config/nvim-colorizer')
