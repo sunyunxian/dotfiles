@@ -1,4 +1,12 @@
-" Fundamentals "{{{
+" 颜色和字体外观 => Colors and Fonts "{{{
+" ---------------------------------------------------------------------
+set number " 是否显示行号
+syntax enable " 开启高亮
+set background=dark " 背景颜色
+set title " 在窗口标题栏中显示文件名
+" }}}
+
+" Fu ndamentals "{{{
 " ---------------------------------------------------------------------
 
 " init autocmd
@@ -8,24 +16,39 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
-set nocompatible
-set number
-syntax enable
-set fileencodings=utf-8,sjis,euc-jp,latin
-set encoding=utf-8
-set title
-set autoindent
-set background=dark
-set nobackup
-set hlsearch
-set showcmd
-set cmdheight=1
-set laststatus=2
-set scrolloff=10
-set expandtab
+set nocompatible " 不与 vi 兼容，只使用 vim 的命令
+" 文件编码
+set fileencodings=utf-8,sjis,euc-jp,latin, gbk " 防止中文日文等乱码
+set encoding=utf-8 " 使用 utf8 编码
+
+"}}}
+
+
+" 文件，备份和撤销 =>Files, backups, undo "{{{
+" ---------------------------------------------------------------------
+set nobackup " 不创建备份文件，即原有的文件结尾会有一个 ~
+set nowb " 在覆写一个文件前进行备份，覆写成功后删除备份文件 
+set noswapfile " 不创建交换文件，.swp 的交换文件主要为了防止系统崩溃后的恢复文件
+set backupskip=/tmp/*,/private/tmp/* " 不会备份的文件类型
+"}}}
+
+" 状态栏 => Status line "{{{
+" ---------------------------------------------------------------------
+set showcmd " 底部显示操作命令
+set cmdheight=2 " 执行命令时候的高度
+set laststatus=2 " 是否显示状态，0 不显示，1 多窗口时候显示 2 显示
+" }}}
+
+" 其他 =>Files, backups, undo "{{{
+" ---------------------------------------------------------------------
+
+set noerrorbells " 出错的时候不发出声响提醒警告
+set visualbell " 出错的时候使用视觉的提醒警告
+
+set hlsearch " 搜索时候高亮显示结果
+set scrolloff=10 " 垂直滚动时候，光标距离顶部/底部距离，单位是行
 "let loaded_matchparen = 1
-set shell=zsh
-set backupskip=/tmp/*,/private/tmp/*
+set shell=zsh " 使用的 shell 类型
 
 " incremental substitution (neovim)
 if has('nvim')
@@ -41,16 +64,9 @@ set lazyredraw
 "set showmatch
 " How many tenths of a second to blink when matching brackets
 "set mat=2
-" Ignore case when searching
-set ignorecase
+set ignorecase " 搜索的时候忽略大小写
 " Be smart when using tabs ;)
-set smarttab
-" indents
-filetype plugin indent on
-set shiftwidth=4
-set tabstop=2
-set ai "Auto indent
-set si "Smart indent
+set smarttab 
 set nowrap "No Wrap lines
 set backspace=start,eol,indent
 " Finding files - Search down into subfolders
@@ -63,6 +79,18 @@ autocmd InsertLeave * set nopaste
 " Add asterisks in block comments
 set formatoptions+=r
 
+"}}}
+"
+
+"  缩进 indents"{{{
+" ---------------------------------------------------------------------
+set autoindent " 自动缩进，即和上一行保持一样的缩进
+set expandtab " 拓展 tab，因为不同的编辑器 tab 不一定一样，所以将 tab 转成 space
+filetype plugin indent on " 开启类型检查，并且载入相关的缩进规则
+set shiftwidth=4 " 按下 >> 增加缩进 << 取消一级缩进 == 取消全部缩进，每一级的字符数
+set tabstop=2 " tab 转成缩少空格
+set ai "Auto indent
+set si "Smart indent
 "}}}
 
 " Highlights "{{{
@@ -108,7 +136,7 @@ autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
-"}}}
+ "}}}
 
 " Imports "{{{
 " ---------------------------------------------------------------------
@@ -124,10 +152,12 @@ if has('win32')
   runtime ./windows.vim
 endif
 
+" 快捷键 "{{{
+" ---------------------------------------------------------------------
 runtime ./maps.vim
-"}}}
+" }}}
 
-" Syntax theme "{{{
+"  Syntax theme "{{{
 " ---------------------------------------------------------------------
 
 " true color
@@ -146,7 +176,7 @@ endif
 
 "}}}
 
-" Extras "{{{
+" E xtras "{{{
 " ---------------------------------------------------------------------
 set exrc
 "}}}
