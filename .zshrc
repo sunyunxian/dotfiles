@@ -35,8 +35,7 @@ else
 fi
 
 
-alias vim='nvim'
-alias nv='nvim'
+alias v='nvim'
 
 alias ll='ls -alh'
 alias la='ls -A'
@@ -47,6 +46,10 @@ alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -v'
 alias ln='ln -v'
+
+if [[ -f ~/.alias ]]; then 
+    . ~/.alias
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
