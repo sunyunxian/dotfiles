@@ -17,6 +17,72 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Uncomment the following line to change how often to auto-update (in days).
 zstyle ':omz:update' frequency 15
 
+
+host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+export https_proxy="https://$host_ip:7890"
+export http_proxy="http://$host_ip:7890"
+export all_proxy="socks5://$host_ip:7890"
+
+# alias vim='nvim'
+# alias vi='nvim'
+alias v='nvim'
+
+# tmux function
+tmux_ide() {
+    tmux split-window -v -p 30
+    tmux split-window -h -p 66
+    tmux split-window -h -p 50
+}
+
+
+# Proxy configuration
+
+function get_ip() {
+  local PORT=7890
+  export winip=$(ip route | grep default | awk '{print $3}')
+  export wslip=$(hostname -I | awk '{print $1}')
+  export PROXY_SOCKS5="socks5://${winip}:${PORT}"
+  export PROXY_HTTP="http://${winip}:${PORT}"
+  echo "winip is ${winip}"
+  echo "wslip is ${wslip}"
+}
+
+function wsl_proxy() {
+  get_ip
+  export http_proxy="${PROXY_HTTP}"
+  export HTTP_PROXY="${PROXY_HTTP}"
+  export https_proxy="${PROXY_HTTP}"
+  export HTTPS_PROXY="${PROXY_HTTP}"
+  export ftp_proxy="${PROXY_HTTP}"
+  export FTP_PROXY="${PROXY_HTTP}"
+  export rsync_proxy="${PROXY_HTTP}"
+  export RSYNC_PROXY="${PROXY_HTTP}"
+  export ALL_PROXY="${PROXY_SOCKS5}"
+  export all_proxy="${PROXY_SOCKS5}"
+}
+
+function un_wsl_proxy() {
+  unset http_proxy
+  unset HTTP_PROXY
+  unset https_proxy
+  unset HTTPS_PROXY
+  unset ftp_proxy
+  unset FTP_PROXY
+  unset rsync_proxy
+  unset RSYNC_PROXY
+  unset ALL_PROXY
+  unset all_proxy
+  # sudo rm /etc/apt/apt.conf.d/proxy.conf
+  git config --global --unset http.https://github.com.proxy
+
+}
+
+
+
+# eval "$(/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
 plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting)
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
