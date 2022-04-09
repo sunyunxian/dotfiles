@@ -23,12 +23,23 @@ export https_proxy="https://$host_ip:7890"
 export http_proxy="http://$host_ip:7890"
 export all_proxy="socks5://$host_ip:7890"
 
-# alias vim='nvim'
-# alias vi='nvim'
+alias vim='nvim'
+alias vi='nvim'
 alias v='nvim'
+export EDITOR=nvim
+
+# onedrive function
+
+function go_onedrive() {
+    local ONEDRIVE_PATH=
+    ONEDRIVE_PATH="/mnt/d/OneDrive/person/docs"
+    cd "${ONEDRIVE_PATH}"
+    echo "Current path is $(pwd)"
+}
+
 
 # tmux function
-tmux_ide() {
+function tmux_ide() {
     tmux split-window -v -p 30
     tmux split-window -h -p 66
     tmux split-window -h -p 50
