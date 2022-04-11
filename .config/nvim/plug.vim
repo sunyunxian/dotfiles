@@ -10,6 +10,7 @@ Plug 'tpope/vim-rhubarb' "
 if has("nvim")
   " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " markdown 预览
+  Plug 'mzlogin/vim-markdown-toc' " 生成目录
   Plug 'hoob3rt/lualine.nvim' " 配置 neovim 状态栏工具
   Plug 'kyazdani42/nvim-web-devicons' " 提供图标支持
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } " 文件浏览器

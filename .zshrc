@@ -18,78 +18,6 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 zstyle ':omz:update' frequency 15
 
 
-host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-export https_proxy="https://$host_ip:7890"
-export http_proxy="http://$host_ip:7890"
-export all_proxy="socks5://$host_ip:7890"
-
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
-export EDITOR=nvim
-
-# onedrive function
-
-function go_onedrive() {
-    local ONEDRIVE_PATH=
-    ONEDRIVE_PATH="/mnt/d/OneDrive/person/docs"
-    cd "${ONEDRIVE_PATH}"
-    echo "Current path is $(pwd)"
-}
-
-
-# tmux function
-function tmux_ide() {
-    tmux split-window -v -p 30
-    tmux split-window -h -p 66
-    tmux split-window -h -p 50
-}
-
-
-# Proxy configuration
-
-function get_ip() {
-  local PORT=7890
-  export winip=$(ip route | grep default | awk '{print $3}')
-  export wslip=$(hostname -I | awk '{print $1}')
-  export PROXY_SOCKS5="socks5://${winip}:${PORT}"
-  export PROXY_HTTP="http://${winip}:${PORT}"
-  echo "winip is ${winip}"
-  echo "wslip is ${wslip}"
-}
-
-function wsl_proxy() {
-  get_ip
-  export http_proxy="${PROXY_HTTP}"
-  export HTTP_PROXY="${PROXY_HTTP}"
-  export https_proxy="${PROXY_HTTP}"
-  export HTTPS_PROXY="${PROXY_HTTP}"
-  export ftp_proxy="${PROXY_HTTP}"
-  export FTP_PROXY="${PROXY_HTTP}"
-  export rsync_proxy="${PROXY_HTTP}"
-  export RSYNC_PROXY="${PROXY_HTTP}"
-  export ALL_PROXY="${PROXY_SOCKS5}"
-  export all_proxy="${PROXY_SOCKS5}"
-}
-
-function un_wsl_proxy() {
-  unset http_proxy
-  unset HTTP_PROXY
-  unset https_proxy
-  unset HTTPS_PROXY
-  unset ftp_proxy
-  unset FTP_PROXY
-  unset rsync_proxy
-  unset RSYNC_PROXY
-  unset ALL_PROXY
-  unset all_proxy
-  # sudo rm /etc/apt/apt.conf.d/proxy.conf
-  git config --global --unset http.https://github.com.proxy
-
-}
-
-
-
 # eval "$(/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -112,21 +40,11 @@ else
 fi
 
 
-alias v='nvim'
+# reload my alias config
+[[ ! -f ~/.alias ]] || source ~/.alias
 
-alias ll='ls -alh'
-alias la='ls -A'
-alias l='ls -CF'
-# add -v will stdout result
-alias mkdir='mkdir -v'
-alias mv='mv -v'
-alias cp='cp -v'
-alias rm='rm -v'
-alias ln='ln -v'
-
-if [[ -f ~/.alias ]]; then 
-    . ~/.alias
-fi
+# reload my function config
+[[ ! -f ~/.function ]] || source ~/.function
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

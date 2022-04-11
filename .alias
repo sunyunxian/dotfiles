@@ -1,0 +1,19 @@
+
+# my alias config
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
+
+alias g='git'
+
+alias ll='ls -alh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# add -v will stdout result
+alias mkdir='mkdir -v'
+alias mv='mv -v'
+alias cp='cp -v'
+alias rm='rm -vi' # -i 会有一个交互式的删除
+alias ln='ln -v'
+
