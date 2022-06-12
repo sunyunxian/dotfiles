@@ -1,8 +1,5 @@
-
 # my alias config
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
+alias v='vim'
 
 alias g='git'
 
@@ -16,4 +13,11 @@ alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -vi' # -i 会有一个交互式的删除
 alias ln='ln -v'
+
+# tmux alias
+alias tls='tmux ls'
+alias tnew='tmux new -s'
+alias tde='tmux detach'
+alias tat='tmux attach -t'
+alias tkill='tmux kill-session -t'
 
