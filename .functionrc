@@ -1,0 +1,49 @@
+local_ip="127.0.0.1"
+PORT="7890"
+export https_proxy="https://$local_ip:$PORT"
+export http_proxy="http://$local_ip:$PORT"
+export all_proxy="socks5://$local_ip:$PORT"
+
+# tmux function
+function tmux_ide() {
+    tmux split-window -v -p 30
+    tmux split-window -h -p 66
+    tmux split-window -h -p 50
+}
+
+
+# Proxy configuration
+export PROXY_SOCKS5="socks5://${local_ip}:${PORT}"
+export PROXY_HTTP="http://${local_ip}:${PORT}"
+
+function set_proxy() {
+    export http_proxy="${PROXY_HTTP}"
+    export HTTP_PROXY="${PROXY_HTTP}"
+    export https_proxy="${PROXY_HTTP}"
+    export HTTPS_PROXY="${PROXY_HTTP}"
+    export ftp_proxy="${PROXY_HTTP}"
+    export FTP_PROXY="${PROXY_HTTP}"
+    export rsync_proxy="${PROXY_HTTP}"
+    export RSYNC_PROXY="${PROXY_HTTP}"
+    export ALL_PROXY="${PROXY_SOCKS5}"
+    export all_proxy="${PROXY_SOCKS5}"
+}
+
+function unset_proxy() {
+    unset http_proxy
+    unset HTTP_PROXY
+    unset https_proxy
+    unset HTTPS_PROXY
+    unset ftp_proxy
+    unset FTP_PROXY
+    unset rsync_proxy
+    unset RSYNC_PROXY
+    unset ALL_PROXY
+    unset all_proxy
+    # sudo rm /etc/apt/apt.conf.d/proxy.conf
+    git config --global --unset http.https://github.com.proxy
+}
+
+function set_pip_index_url(){
+  pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+}

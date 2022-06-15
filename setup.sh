@@ -10,8 +10,8 @@ DOTFILES_ARRAY=(
     .config
     .gitconfig
     .gitignore
-    .alias
-    .function
+    .aliasrc
+    .functionrc
 )
 
 CURRENT_PATH=$(cd "$(dirname "$0")";pwd)
