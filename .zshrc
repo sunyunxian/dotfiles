@@ -115,3 +115,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.functionrc ]] || source ~/.functionrc
 
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"

@@ -22,6 +22,4 @@ alias tat='tmux attach -t'
 alias tkill='tmux kill-session -t'
 
 # python pip
-alias python3.10="/opt/homebrew/opt/python@3.10/bin/python3"
 alias pip="python -m pip"
-# alias pip3.10="/opt/homebrew/opt/python@3.10/bin/python3 -m pip"
