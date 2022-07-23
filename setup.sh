@@ -7,7 +7,7 @@ DOTFILES_ARRAY=(
     .zshrc
     .bahrc
     .p10k.zsh
-    .config
+    # .config
     .gitconfig
     .gitignore
     .aliasrc
@@ -20,9 +20,9 @@ for i in "${DOTFILES_ARRAY[@]}"; do
     if [[ -a "${HOME}/${i}" ]];then
         echo "rm ${HOME}/${i}"
         rm -rf "${HOME}/${i}"
-        ln -s "${CURRENT_PATH}/${i}" "${HOME}/${i}"
+        cat "${CURRENT_PATH}/${i}" > "${HOME}/${i}"
     else
-        ln -s "${CURRENT_PATH}/${i}" "${HOME}/${i}"
+        cat "${CURRENT_PATH}/${i}" > "${HOME}/${i}"
     fi
 done
 
