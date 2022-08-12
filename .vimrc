@@ -5,6 +5,7 @@ set number " 是否显示行号
 syntax enable " 开启高亮
 set background=dark " 背景颜色
 set title " 在窗口标题栏中显示文件名
+set termguicolors
 
 set encoding=utf-8
 set nocompatible " 不与 vi 兼容，只使用 vim 的命令
@@ -28,6 +29,23 @@ set laststatus=2 " 是否显示状态，0 不显示，1 多窗口时候显示 2 
 " filetype plugin(ftplugin) setting
 filetype plugin on
 
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
+" For dark version.
+set background=dark
+" For light version.
+" set background=light
+" Set contrast.
+" This configuration option should be placed before `colorscheme everforest`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'soft'
+" For better performance
+let g:everforest_better_performance = 1
+colorscheme everforest
+
+
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
@@ -46,6 +64,8 @@ Plug 'wakatime/vim-wakatime'
 " https://github.com/mhinz/vim-startify
 Plug 'mhinz/vim-startify'
 
+
+Plug 'sainnhe/everforest'
 "
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 " Plug 'junegunn/vim-easy-align'

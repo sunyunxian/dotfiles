@@ -1,6 +1,8 @@
 # my alias config
 alias v='vim'
+alias vi='vim'
 
+# git
 alias g='git'
 
 alias ll='ls -alh'
