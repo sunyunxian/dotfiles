@@ -6,8 +6,7 @@ MKFILE_DIR := $(dir $(MKFILE_PATH))
 config_vim:
 	@echo "Config vimrc"
 	echo ${MKFILE_DIR}
-	rm -rf ${HOME}/.vimrc
-	cat ${MKFILE_DIR}/.vimrc > ${HOME}/.vimrc
+	ln -sf ${MKFILE_DIR}.vimrc  ${HOME}/.vimrc
 
 # set -e
 

@@ -40,6 +40,12 @@ call plug#begin()
 " Make sure you use single quotes
 " wakatime
 Plug 'wakatime/vim-wakatime'
+
+" vim-startify 
+" The fancy start screen for Vim.
+" https://github.com/mhinz/vim-startify
+Plug 'mhinz/vim-startify'
+
 "
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 " Plug 'junegunn/vim-easy-align'
