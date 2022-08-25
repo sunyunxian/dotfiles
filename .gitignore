@@ -68,3 +68,6 @@ Pods/
 
 # Karabiner
 .config/karabiner/automatic_backups
+
+# vscode
+.vscode
