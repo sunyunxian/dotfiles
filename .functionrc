@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 local_ip="127.0.0.1"
 PORT="7890"
 export https_proxy="https://$local_ip:$PORT"
