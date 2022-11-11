@@ -19,10 +19,11 @@ alias rm='rm -vi' # -i 会有一个交互式的删除
 alias ln='ln -v'
 
 # tmux alias
+# sessions
 alias tls='tmux ls'
 alias tnew='tmux new -s'
-alias tde='tmux detach'
-alias tat='tmux attach -t'
+alias tdet='tmux detach'
+alias tatt='tmux attach -t'
 alias tkill='tmux kill-session -t'
 
 # python pip
