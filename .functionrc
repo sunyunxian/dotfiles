@@ -49,3 +49,11 @@ function unset_proxy() {
 function set_pip_index_url(){
   pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 }
+function daily(){
+    if [[ -f /Users/sunyunxian/workspace/personal/journal/daily/"$(date -u +%Y-%m-%d)".md ]];then
+        echo "exit"
+    else
+        touch /Users/sunyunxian/workspace/personal/journal/daily/$(date -u +%Y-%m-%d).md
+        ls /Users/sunyunxian/workspace/personal/journal/daily | grep $(date -u +%Y-%m-%d)
+    fi
+}

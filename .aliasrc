@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # my alias config
-alias v='vim'
-alias vi='vim'
+alias v='nvim'
+alias vim='nvim'
 
 # git
 alias g='git'

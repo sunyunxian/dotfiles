@@ -13,9 +13,6 @@ config_vim:
 	@echo "Config vimrc"
 	echo ${MKFILE_DIR}
 	ln -sf ${MKFILE_DIR}.vimrc  ${HOME}/.vimrc
-	ln -sf ${MKFILE_DIR}.vim/autoload  ${HOME}/.vim
-	ln -sf ${MKFILE_DIR}.vim/after  ${HOME}/.vim
-	ln -sf ${MKFILE_DIR}.vim/colors  ${HOME}/.vim
 	
 config_zsh:
 	@echo "Config zshrc"
