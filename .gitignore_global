@@ -1,0 +1,7 @@
+# git ignore global config
+# cli: git config --global core.excludesfile ~/.gitignore_global
+
+# vim ignore file
+*~
+# Mac ignore file
+.DS_Store
