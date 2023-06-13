@@ -4,4 +4,4 @@
 # vim ignore file
 *~
 # Mac ignore file
-.DS_Store
+*/.DS_Store

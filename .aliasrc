@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
 
+# proxy config
+export https_proxy="http://127.0.0.1:7890"
+export http_proxy="http://127.0.0.1:7890"
+export all_proxy="socks5://127.0.0.1:7891"
+
+
+alias proxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7891;"
+
+alias unproxy="unset http_proxy;unset https_proxy;unset all_proxy;" 
+
+alias ipcn="curl myip.ipip.net"
+alias ip="curl ip.sb"
+
+
+
 # my alias config
-alias v='nvim'
-alias vim='nvim'
+alias v='vim'
 
 # git
 alias g='git'
@@ -11,11 +25,20 @@ alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls -CF'
 
+function git_proxy() {
+    git config --global http.proxy http://127.0.0.1:7890
+    git config --global https.proxy https://127.0.0.1:7890
+}
+function git_unproxy() {
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+}
+
 # add -v will stdout result
 alias mkdir='mkdir -v'
 alias mv='mv -v'
 alias cp='cp -v'
-alias rm='rm -vi' # -i 会有一个交互式的删除
+alias rm='rm -i' # -i 会有一个交互式的删除
 alias ln='ln -v'
 
 # tmux alias
