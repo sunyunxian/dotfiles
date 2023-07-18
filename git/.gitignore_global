@@ -5,3 +5,7 @@
 *~
 # Mac ignore file
 */.DS_Store
+# idea
+.idea
+# nohup
+nohup.out

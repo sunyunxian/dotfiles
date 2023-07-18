@@ -1,24 +1,25 @@
 "------------------------------------------
-" My vimrc
 " Author: sunyunxian
 " Email: personal_sunyunxian@foxmail.com
 "-----------------------------------------
 
 " Basic config
+set nocompatible " 不与 vi 兼容，只使用 vim 的命令
 set encoding=utf-8 " 文件编码设置
-set nobackup "不需要备份
-set noswapfile "禁止生成临时文件
-set autoread "文件自动检测外部更改
-
-
+set nobackup " 不需要备份
+set noswapfile " 禁止生成临时文件
+set autoread " 文件自动检测外部更改
 set title " 在窗口标题栏中显示文件名
-syntax enable " 开启高亮
-filetype on "开启文件类型检测
 set number " 是否显示行号
-set relativenumber " 相对行号
+map <silent><F4> :set relativenumber!<CR> " f4 开启显示相对行号
+
+
+syntax enable " 开启高亮
+
+filetype on "开启文件类型检测
+" set relativenumber " 相对行号
 set backspace=2 " 删除键的问题
 set mouse=a " 支持鼠标
-set nocompatible " 不与 vi 兼容，只使用 vim 的命令
 set hlsearch " 搜索高亮
 set ignorecase " 忽略大小写
 set incsearch " 搜索模式下，自动跳到第一个匹配的结果
@@ -47,5 +48,6 @@ set showcmd " 底部显示操作命令
 set cmdheight=2 " 执行命令时候的高度
 set laststatus=2 " 是否显示状态，0 不显示，1 多窗口时候显示 2 显示
 set termguicolors " 打开 24 位真彩色支持
+
 set t_Co=256
 noremap <C-n> :Lexplore<CR>  
