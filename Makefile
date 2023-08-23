@@ -6,8 +6,15 @@ MKFILE_DIR := $(dir $(MKFILE_PATH))
 .PHONY: config_vim config_zsh \
 				config_aliasrc config_functionrc config_gitconfig
 
-all: config_vim config_zsh \
-				config_aliasrc config_functionrc config_gitconfig
+all: config_vim \
+	config_zsh \
+	config_aliasrc \
+	config_functionrc \
+	config_gitconfig
+
+config_pip:
+	@echo "Config user pip config"
+	ln -sf ${MKFILE_DIR}.config/pip  ${HOME}/.config/pip
 
 config_vim:
 	@echo "Config vimrc"
