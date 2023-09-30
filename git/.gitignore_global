@@ -9,3 +9,5 @@
 .idea
 # nohup
 nohup.out
+# excel tmp file
+~$*

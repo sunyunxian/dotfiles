@@ -4,13 +4,17 @@ MKFILE_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
 MKFILE_DIR := $(dir $(MKFILE_PATH))
 
 .PHONY: config_vim config_zsh \
-				config_aliasrc config_functionrc config_gitconfig
+		config_aliasrc \
+		config_functionrc \
+		config_gitconfig \
+		config_pip
 
 all: config_vim \
 	config_zsh \
 	config_aliasrc \
 	config_functionrc \
-	config_gitconfig
+	config_gitconfig \
+	config_pip
 
 config_pip:
 	@echo "Config user pip config"
@@ -40,7 +44,7 @@ config_functionrc:
 git_config:
 	@echo "Config gitconfig"
 	echo ${MKFILE_DIR}
-	ln -sf ${MKFILE_DIR}git/.gitconfig ${HOME}/.gitconfig
-	ln -sf ${MKFILE_DIR}git/.gitignore.home ${HOME}/.gitignore
-	ln -sf ${MKFILE_DIR}git/.gitignore_global ${HOME}/.gitignore_global
-	ln -sf ${MKFILE_DIR}git/.gitconfig.xyz ${HOME}/.gitconfig.xyz
+	cat ${MKFILE_DIR}git/.gitconfig > ${HOME}/.gitconfig
+	cat ${MKFILE_DIR}git/.gitignore.home > ${HOME}/.gitignore
+	cat ${MKFILE_DIR}git/.gitignore_global > ${HOME}/.gitignore_global
+	cat ${MKFILE_DIR}git/.gitconfig.xyz > ${HOME}/.gitconfig.xyz
