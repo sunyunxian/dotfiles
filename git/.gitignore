@@ -1,6 +1,3 @@
-# git ignore global config
-# cli: git config --global core.excludesfile ~/.gitignore_global
-
 # ----------------- MacOS -------------------------------
 # General
 .DS_Store

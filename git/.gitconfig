@@ -1,17 +1,22 @@
+# This is Git's per-user configuration file.
 [user]
-	name = sunyunxian
+	name = syx
 	email = personal_sunyunxian@foxmail.com
 [init]
-    defaultBranch = main # Change git init default branch name
+	defaultBranch = main# Change git init default branch name
 [core]
 	excludesfile = /Users/sunyunxian/.gitignore_global
 	quotepath = false
-    editor = vim
-    ignorecase = false
+	editor = vim
+	ignorecase = false
+[includeIf "gitdir:Users/sunyunxian/workspace/company/xyz/"]
+	path = .gitconfig.xyz
 [gc]
-    reflogExpire = never # Make reflog never expire
+	reflogExpire = never# Make reflog never expire
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = true
