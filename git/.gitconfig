@@ -2,6 +2,7 @@
 [user]
 	name = syx
 	email = personal_sunyunxian@foxmail.com
+	signingkey = E3D5E8B5F367FF4EA000986360AA869611CA60C4
 [init]
 	defaultBranch = main# Change git init default branch name
 [core]
@@ -9,7 +10,7 @@
 	quotepath = false
 	editor = vim
 	ignorecase = false
-[includeIf "gitdir:Users/sunyunxian/workspace/company/xyz/"]
+[includeIf "gitdir:Users/sunyunxian/workspace/work/xyz"]
 	path = .gitconfig.xyz
 [gc]
 	reflogExpire = never# Make reflog never expire
