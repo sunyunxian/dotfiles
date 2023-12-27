@@ -6,12 +6,12 @@
 [init]
 	defaultBranch = main# Change git init default branch name
 [core]
-	excludesfile = /Users/sunyunxian/.gitignore_global
+	excludesfile = /Users/sunyunxian/.global.gitignore
 	quotepath = false
 	editor = vim
 	ignorecase = false
 [includeIf "gitdir:Users/sunyunxian/workspace/work/xyz"]
-	path = .gitconfig.xyz
+	path = .xyz.gitconfig
 [gc]
 	reflogExpire = never# Make reflog never expire
 [filter "lfs"]

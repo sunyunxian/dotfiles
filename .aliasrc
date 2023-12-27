@@ -5,7 +5,7 @@ export https_proxy="http://127.0.0.1:7890"
 export http_proxy="http://127.0.0.1:7890"
 export all_proxy="socks5://127.0.0.1:7891"
 alias proxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7891;"
-alias unproxy="unset http_proxy;unset https_proxy;unset all_proxy;" 
+alias unproxy="unset http_proxy;unset https_proxy;unset all_proxy;"
 
 # ip function
 alias ipcn="curl myip.ipip.net"
@@ -15,8 +15,6 @@ alias v='vim'
 alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls -CF'
-
-
 
 # add -v will stdout result
 alias mkdir='mkdir -v'
@@ -46,3 +44,8 @@ function git_unproxy() {
     git config --global --unset http.proxy
     git config --global --unset https.proxy
 }
+
+# ssh connection local network
+
+alias xuyanze="ssh xuyanze@172.18.23.47 -p 22"
+alias harmonia="ssh apple@172.18.16.163 -p 22"
