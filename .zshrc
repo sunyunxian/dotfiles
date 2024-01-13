@@ -19,7 +19,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     cp
-    z
+    autojump
     colored-man-pages
     zsh-syntax-highlighting
     zsh-autosuggestions
