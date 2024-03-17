@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# git alias
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 # proxy config
 export https_proxy="http://127.0.0.1:7890"
 export http_proxy="http://127.0.0.1:7890"
@@ -19,7 +22,6 @@ alias l='ls -CF'
 # add -v will stdout result
 alias mkdir='mkdir -v'
 alias mv='mv -v'
-alias rm='trash -v ' # -i 会有一个交互式的删除
 alias ln='ln -v'
 
 # tmux alias

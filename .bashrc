@@ -1,2 +1,2 @@
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 alias git='LANG=en_GB git'

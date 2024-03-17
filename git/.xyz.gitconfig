@@ -1,5 +1,5 @@
 [user]
 	name = sunyunxian
 	email = sunyunxian@021.com
-[commit]
-	gpgsign = False
+[credential]
+	helper = store
