@@ -8,8 +8,8 @@ function overwrite_dotfile() {
     # $2 overwrited file
 
     [[ "${1}" == "" || "${2}" == "" ]] && echo "Argument error" && exit 1
-    overwrite_file="${1}"
-    overwrited_file="${2}"
+    local overwrite_file="${1}"
+    local overwrited_file="${2}"
 
     if [[ ! -f "${overwrited_file}" ]]; then
         echo "${overwrited_file} not exist" && touch "${overwrited_file}"
@@ -30,7 +30,10 @@ cat "${GIT_CONFIG_DIR}"/.xyz.gitconfig >"${HOME}"/.xyz.gitconfig
 
 echo "===== zsh config ====="
 
+cat "${SCRIPT_DIR}"/.zshenv >"${HOME}"/.zshenv
+cat "${SCRIPT_DIR}"/.zprofile >"${HOME}"/.zprofile
 cat "${SCRIPT_DIR}"/.zshrc >"${HOME}"/.zshrc
+cat "${SCRIPT_DIR}"/.zlogin >"${HOME}"/.zlogin
 cat "${SCRIPT_DIR}"/.aliasrc >"${HOME}"/.aliasrc
 cat "${SCRIPT_DIR}"/.functionrc >"${HOME}"/.functionrc
 

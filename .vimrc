@@ -50,4 +50,10 @@ set laststatus=2 " 是否显示状态，0 不显示，1 多窗口时候显示 2 
 set termguicolors " 打开 24 位真彩色支持
 
 set t_Co=256
-noremap <C-n> :Lexplore<CR>  
+noremap <C-n> :Lexplore<CR>
+
+" use vim-plig plugins https://github.com/junegunn/vim-plug
+call plug#begin()
+" wakatime
+Plug 'wakatime/vim-wakatime'
+call plug#end()
