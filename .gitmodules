@@ -1,6 +1,21 @@
 [submodule "plugged/vim-wakatime"]
 	path = .vim/plugged/vim-wakatime
 	url = https://github.com/wakatime/vim-wakatime
-[submodule ".vim/plugged/vim-wakatime"]
-	path = .vim/plugged/vim-wakatime
-	url = https://github.com/wakatime/vim-wakatime
+[submodule ".vim/plugged/vim-colors-github"]
+	path = .vim/plugged/vim-colors-github
+	url = https://github.com/cormacrelf/vim-colors-github
+[submodule ".vim/plugged/vim-github-dark"]
+	path = .vim/plugged/vim-github-dark
+	url = https://github.com/vv9k/vim-github-dark
+[submodule ".vim/plugged/fzf.vim"]
+	path = .vim/plugged/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule ".vim/plugged/fzf"]
+	path = .vim/plugged/fzf
+	url = https://github.com/junegunn/fzf
+[submodule ".vim/plugged/nerdtree"]
+	path = .vim/plugged/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule ".vim/plugged/vim-airline"]
+	path = .vim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline

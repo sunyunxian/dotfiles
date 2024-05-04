@@ -24,7 +24,6 @@ GIT_CONFIG_DIR="${SCRIPT_DIR}/git"
 
 cat "${GIT_CONFIG_DIR}"/.gitconfig >"${HOME}"/.gitconfig
 cat "${GIT_CONFIG_DIR}"/.gitignore >"${HOME}"/.gitignore
-cat "${GIT_CONFIG_DIR}"/.sunyunxian.gitignore >"${HOME}"/.sunyunxian.gitignore
 cat "${GIT_CONFIG_DIR}"/.global.gitignore >"${HOME}"/.global.gitignore
 cat "${GIT_CONFIG_DIR}"/.xyz.gitconfig >"${HOME}"/.xyz.gitconfig
 
@@ -43,4 +42,9 @@ cat "${SCRIPT_DIR}"/.bashrc >"${HOME}"/.bashrc
 echo "===== vim config ====="
 
 overwrite_dotfile "${SCRIPT_DIR}/.vimrc" "${HOME}/.vimrc"
-overwrite_dotfile "${SCRIPT_DIR}/.vscode.vimrc" >"${HOME}/.vscode.vimrc"
+overwrite_dotfile "${SCRIPT_DIR}/.vscode.vimrc" "${HOME}/.vscode.vimrc"
+
+rm -rf "${HOME}/.vim/" && cp -r .vim "${HOME}/.vim"
+
+echo "===== neovim config ====="
+rm -rf "${HOME}/.config/nvim" && cp -r .config/nvim "${HOME}/.config/nvim"
