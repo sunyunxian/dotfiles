@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
-	name = syx
+	name = JeffSun
 	email = personal_sunyunxian@foxmail.com
-	username = Jeff
+	username = JeffSun
 
 [init]
 	defaultBranch = main# Change git init default branch name
@@ -36,3 +36,5 @@
 
 [alias]
 	last = "git log -1"
+[push]
+	autoSetupRemote = true

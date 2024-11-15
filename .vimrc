@@ -65,7 +65,6 @@ endif
 " use vim-plig plugins https://github.com/junegunn/vim-plug
 call plug#begin()
 " wakatime
-    Plug 'wakatime/vim-wakatime'
     Plug 'cormacrelf/vim-colors-github'
     Plug 'wojciechkepka/vim-github-dark'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

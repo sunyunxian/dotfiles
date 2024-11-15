@@ -45,7 +45,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-export PATH="/opt/homebrew/opt/mysql/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -55,3 +56,4 @@ brew_fzf_key_bindings="$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
 source "${brew_fzf_key_bindings}"
 
 alias git="LANG=en_GB git"
+export PATH="/opt/homebrew/bin:$PATH"
