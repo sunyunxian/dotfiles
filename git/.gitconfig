@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
-	name = JeffSun
+	name = Sun Xian
 	email = personal_sunyunxian@foxmail.com
-	username = JeffSun
+	username = Sun Xian
 
 [init]
 	defaultBranch = main# Change git init default branch name

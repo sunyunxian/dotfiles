@@ -29,6 +29,7 @@ cat "${GIT_CONFIG_DIR}"/.xyz.gitconfig >"${HOME}"/.xyz.gitconfig
 
 echo "===== zsh config ====="
 
+cat "${SCRIPT_DIR}"/.bash_profile >"${HOME}"/.bash_profile
 cat "${SCRIPT_DIR}"/.zshenv >"${HOME}"/.zshenv
 cat "${SCRIPT_DIR}"/.zprofile >"${HOME}"/.zprofile
 cat "${SCRIPT_DIR}"/.zshrc >"${HOME}"/.zshrc
