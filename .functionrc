@@ -22,5 +22,10 @@ function git_unproxy() {
 }
 
 function journal(){
-    vim ~/journal.txt
+    JOURNAL="${HOME}/journal.txt"
+    if [[ -z $1 ]]; then
+        vim "$JOURNAL"
+    else
+        grep "$1" "$JOURNAL"
+    fi
 }
