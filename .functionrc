@@ -11,3 +11,16 @@ function push_disk_error() {
     echo "run killall Finder" && killall Finder
 }
 
+# git proxy
+function git_proxy() {
+    git config --global http.proxy http://127.0.0.1:7890
+    git config --global https.proxy https://127.0.0.1:7890
+}
+function git_unproxy() {
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+}
+
+function journal(){
+    vim ~/journal.txt
+}

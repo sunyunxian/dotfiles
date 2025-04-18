@@ -57,3 +57,12 @@ source "${brew_fzf_key_bindings}"
 alias git="LANG=en_GB git"
 # homebrew PATH
 export PATH="/opt/homebrew/bin:$PATH"
+export HOMEBREW_AUTO_UPDATE_SECS=28800
+# disable auto-update entirely
+# export HOMEBREW_NO_AUTO_UPDATE
+
+# For compilers to find llvm you may need to set:
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export LLVM_CONFIG="/usr/bin/llvm-config"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

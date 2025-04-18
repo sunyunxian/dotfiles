@@ -6,8 +6,8 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 # proxy config
 export https_proxy="http://127.0.0.1:7890"
 export http_proxy="http://127.0.0.1:7890"
-export all_proxy="socks5://127.0.0.1:7891"
-alias proxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7891;"
+export all_proxy="socks5://127.0.0.1:7890"
+alias proxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890;"
 alias unproxy="unset http_proxy;unset https_proxy;unset all_proxy;"
 
 # ip function
@@ -35,19 +35,5 @@ alias tkill='tmux kill-session -t'
 # python pip
 alias pip="python -m pip"
 
-# function
-
-# git proxy
-function git_proxy() {
-    git config --global http.proxy http://127.0.0.1:7890
-    git config --global https.proxy https://127.0.0.1:7890
-}
-function git_unproxy() {
-    git config --global --unset http.proxy
-    git config --global --unset https.proxy
-}
-
 # ssh connection local network
-
-alias xuyanze="ssh xuyanze@172.18.23.47 -p 22"
-alias harmonia="ssh apple@172.18.16.163 -p 22"
+# alias xxx="ssh xxx@172.18.23.47 -p 22"
